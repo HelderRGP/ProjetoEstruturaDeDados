@@ -3,8 +3,19 @@ from Jogador import Jogador
 from Baralho import Baralho
 import random
 
+print('''
+              !!!Bem vindo ao jogo Batalha!!!
 
-
+Regras do jogo:
+1. Divide-se as cartas do baralho, igualmente, para dois jogadores. 
+2. A menor carta é o Ás e a maior do baralho é o Rei. 
+3. Não importa o naipe. 
+4. Cada jogador inicia com seu próprio conjunto de cartas empilhadas, viradas para baixo. 
+5. A batalha começa quando cada jogador retira uma carta do topo do seu baralho e a revela na mesa. Então, aquele que apresentar a carta de maior valor, vence a batalha e recebe a carta do outro jogador. 
+6. As duas cartas são adicionadas à base do baralho.
+7. No caso de cada jogador apresentar a mesma carta, elas ficam bloqueadas e outro par de cartas é puxado. 
+8. Ganha o total de cartas acumuladas o jogador que desempatar a batalha. 
+''')
 
 print("---------- Batalha ---------- \n")
 
