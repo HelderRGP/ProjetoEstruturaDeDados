@@ -1,4 +1,5 @@
 # Baralho = coleçao de cartas (lista de cartas)
+from cgitb import handler
 from Carta import Carta
 from PilhaEncadeada import *
 import random
@@ -13,14 +14,21 @@ class Baralho:
         naipe = ["Ouro",    "Espada","Paus","Copas"]
         cor =   ["vermelho","preto", "preto","vermelho"]
         numeracao = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-
-        
+        self.baralhoTemporario = list()
+    
 
         for idx in range(len(naipe)):
             for id in numeracao:
-                self.baralho.empilha( Carta(id, naipe[idx], cor[idx] ))
+                self.baralhoTemporario.append( Carta(id, naipe[idx], cor[idx] ))        
     
         
+        random.shuffle(self.baralhoTemporario)
+
+        for idx in range(len(naipe)):
+            for id in numeracao:
+                self.baralho.empilha( self.baralhoTemporario.pop())
+        
+
     def __len__(self):
         return self.baralho.tamanho()
 

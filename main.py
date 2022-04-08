@@ -28,22 +28,17 @@ while (True):
 
     
     #Distribuindo as cartas
-    x = baralho.__len__() 
-    y = (x - 1) / 2
+    tamanho_do_baralho = baralho.__len__() 
+    numero_de_rodadas = (tamanho_do_baralho - 1) / 2 #
     n = 0
-    while(n <= y):
+    #*******transformar em método "contarRodadas"
+    while(n <= numero_de_rodadas):
         n += 1
         jogador1.cartasDoJogador.empilha(baralho.retirarCarta())
         jogador2.cartasDoJogador.empilha(baralho.retirarCarta())
 
-    numero = 0
-    dicionario = {
-        "As": 1,
-        "Dama": 2,
-        "Rei": 3,
-        "Valete": 4
-    }
-
+    print(jogador1)
+    print(jogador2)
     
     while(contadorDeJogadas <= 25):
         print()
@@ -119,7 +114,7 @@ while (True):
                 jogador1.cartasDoJogador.empilha(carta)
                 
 
-        elif(jogador2.cartasDoJogador.estaVazia()):
+        if(jogador2.cartasDoJogador.estaVazia()):
             for carta in jogador1.montanteReserva:
                 random.shuffle(jogador2.montanteReserva)     
                 jogador2.cartasDoJogador.empilha(carta)
