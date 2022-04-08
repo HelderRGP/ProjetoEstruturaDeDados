@@ -39,12 +39,12 @@ while (True):
 
     print(jogador1)
     print(jogador2)
-    
+    #Loop para numerar a jogada da vez.
     while(contadorDeJogadas <= 25):
         print()
         print(f"------------------- Jogada #{contadorDeJogadas + 1}: --------------------\n")
 
-        print(f"Carta do jogador(a) {jogador1.nome}: ")
+        print(f"Carta do jogador(a) {jogador1.nome}: ") #Informa a carta do jogador.
         cartaNaMaoDoJogador1 = jogador1.cartasDoJogador.desempilha() #Retira a carta da coleção do jogador e atribui a mao.
         print(cartaNaMaoDoJogador1)
         print()
@@ -69,7 +69,7 @@ while (True):
             print(f"Cartas adquirida: ")
             print(f"{cartaNaMaoDoJogador2}")
             print()
-
+            #No caso de emprate, cada jogador tira mais uma carta para definir o vencedor da rodada.
             if(montanteDeEmpate != []):
                 for carta in montanteDeEmpate:
                     print(carta.__str__(), sep="\n")
